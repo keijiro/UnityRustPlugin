@@ -1,0 +1,11 @@
+[package]
+name = "test_plugin"
+version = "0.1.0"
+authors = ["Keijiro Takahashi <keijiro@gmail.com>"]
+
+[lib]
+name = "test_plugin"
+crate-type = ["dylib"]
+
+[dependencies]
+num = "0.1"
