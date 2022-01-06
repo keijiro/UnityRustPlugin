@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 public class Test : MonoBehaviour
 {
-    [DllImport("test_plugin", EntryPoint="generate_image")]
+    [DllImport("mandelbrot", EntryPoint="generate_image")]
     private static extern void GenerateImage(Color32[] buffer, int width, int height);
 
     void Start ()

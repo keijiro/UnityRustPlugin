@@ -9,6 +9,6 @@ Desktop.ini
 /Temp
 /UserSettings
 
-/Plugin/test_plugin/*.bundle
-/Plugin/test_plugin/*.lock
-/Plugin/test_plugin/target
+/Plugin/*.bundle
+/Plugin/*.lock
+/Plugin/target
