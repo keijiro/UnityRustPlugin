@@ -8,3 +8,7 @@ Desktop.ini
 /Recordings
 /Temp
 /UserSettings
+
+/Plugin/test_plugin/*.bundle
+/Plugin/test_plugin/*.lock
+/Plugin/test_plugin/target
