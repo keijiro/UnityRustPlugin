@@ -8,8 +8,8 @@ This is an example that shows how to write a Unity native plugin in [Rust][Rust]
 The plugin included in this project receives a big array (1024x1024x4 byte)
 from the C# side, and draws the Mandelbrot set into it. Then the C# script
 converts the array into a texture and attach it to a screen quad. See [the
-plugin code](Plugin/test_plugin/src/lib.rs) and [the caller script]
-(Assets/Test.cs) for further details.
+plugin code](Plugin/test_plugin/src/lib.rs) and
+[the caller script](Assets/Test.cs) for further details.
 
 This example is inspired by [Jim Flemming's article][Flemming]. It's recommended
 to read the article in case you're interested in the topic.
