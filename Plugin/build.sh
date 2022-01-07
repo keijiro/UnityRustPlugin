@@ -5,8 +5,8 @@ OPT="--release"
 
 UNAME=`uname`
 
-if [ $UNAME = Linux ]; then
-    IS_WSL=`grep -i -q "microsoft" /proc/version`
+if [ $UNAME = Linux ] && `grep -i -q "microsoft" /proc/version`; then
+    IS_WSL="WSL"
 fi
 
 set -x
