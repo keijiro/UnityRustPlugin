@@ -23,16 +23,18 @@ check the article if interested in the topic.
 How to build the plugin
 -----------------------
 
+The source code for the plugin is contained in the `Plugin` directory.
+
 ### macOS/Linux
 
-You can simply use `build.sh` in the `Plugin` directory.
+You can simply run `build.sh` to build the plugin.
 
 ### Windows
 
 There are some different approaches for Windows. I prefer using WSL2 and the
-cross-compilation target with Cargo.
+cross-compilation target.
 
-For cross-compilation from WSL2 to Windows, you have to install `mingw-w64` and
+For cross-compilation from WSL2 to Windows, you have to install MinGW-w64 and
 the `x86_64-pc-windows-gnu` target.
 
 ```
@@ -40,4 +42,35 @@ sudo apt install gcc-mingw-w64-x86-64
 rustup target add x86_64-pc-windows-gnu
 ```
 
-Now you can run `build.sh` in `Plugin`.
+Now you can run `build.sh`.
+
+### iOS
+
+Install the `aarch64-apple-ios` target.
+
+```
+rustup target add aarch64-apple-ios
+```
+
+Run `build.sh` with passing `ios` to build the plugin.
+
+```
+./build.sh ios
+```
+
+### Android
+
+You have to install NDK and set the `ANDROID_NDK` environment variable to
+specify the installation directory.
+
+Then, install the `aarch64-linux-android` target.
+
+```
+rustup target add aarch64-linux-android
+```
+
+Run `build.sh` with passing `android` to build the plugin.
+
+```
+./build.sh android
+```
