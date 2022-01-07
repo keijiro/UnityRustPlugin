@@ -25,7 +25,7 @@ if [ $IS_IOS ]; then
 
     set -x
     cargo build $OPT --target=$TARGET
-    cp target/${TARGET}/release/lib${LIB}.a $DST
+    cp target/${TARGET}/release/lib${LIB}.a ${DST}/iOS
 
 elif [ $IS_ANDROID ]; then
 
@@ -47,13 +47,13 @@ elif [ $IS_WSL ]; then
     TARGET="x86_64-pc-windows-gnu"
 
     set -x
-    cargo build ${OPT} --target=${TARGET}
+    cargo build $OPT --target=$TARGET
     cp target/${TARGET}/release/${LIB}.dll ${DST}/Windows
 
 elif [ $UNAME = Linux ]; then
 
     set -x
-    cargo build ${OPT}
+    cargo build $OPT
     cp target/release/lib${LIB}.so ${DST}/Linux
 
 elif [ $UNAME = Darwin ]; then
@@ -63,13 +63,13 @@ elif [ $UNAME = Darwin ]; then
 
     set -x
 
-    cargo build ${OPT} --target=${TARGET_ARM}
-    cargo build ${OPT} --target=${TARGET_X86}
+    cargo build $OPT --target=$TARGET_ARM
+    cargo build $OPT --target=$TARGET_X86
 
     lipo -create -output ${LIB}.bundle \
       target/${TARGET_ARM}/release/lib${LIB}.dylib \
       target/${TARGET_X86}/release/lib${LIB}.dylib
 
-    cp ${LIB}.bundle ${DST}
+    cp ${LIB}.bundle ${DST}/macOS
 
 fi
