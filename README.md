@@ -15,7 +15,7 @@ This project was inspired by [Jim Flemming's article]. It's recommended to
 check the article if interested in the topic.
 
 [Rust language]: https://www.rust-lang.org
-[plugin code]: Plugin/test_plugin/src/lib.rs
+[plugin code]: Plugin/src/lib.rs
 [caller script]: Assets/Test.cs
 [Jim Flemming's article]:
   https://medium.com/jim-fleming/rust-lang-in-unity3d-eeaeb47f3a77
