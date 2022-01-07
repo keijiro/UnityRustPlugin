@@ -48,7 +48,7 @@ elif [ $IS_WSL ]; then
 
     set -x
     cargo build ${OPT} --target=${TARGET}
-    cp target/${TARGET}/release/${LIB}.dll ${DST}
+    cp target/${TARGET}/release/${LIB}.dll ${DST}/Windows
 
 elif [ $UNAME = Linux ]; then
 
