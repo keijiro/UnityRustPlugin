@@ -5,7 +5,7 @@ authors = ["Keijiro Takahashi <keijiro@gmail.com>"]
 
 [lib]
 name = "mandelbrot"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 
 [dependencies]
 num = "0.1"
