@@ -1,6 +1,6 @@
 use num::complex::Complex;
 
-fn mandelbrot(px : i32, py : i32, width : i32, height : i32) -> i32 {
+fn mandelbrot(px: i32, py: i32, width: i32, height: i32) -> i32 {
     let x = (px as f32) / (width as f32) * 2.5 - 2.0;
     let y = (py as f32) / (height as f32) * 2.0 - 1.0;
 
