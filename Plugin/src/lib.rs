@@ -1,4 +1,3 @@
-extern crate num;
 use num::complex::Complex;
 
 fn mandelbrot(px : i32, py : i32, width : i32, height : i32) -> i32 {
@@ -19,7 +18,7 @@ fn mandelbrot(px : i32, py : i32, width : i32, height : i32) -> i32 {
 }
 
 #[no_mangle]
-pub unsafe extern fn generate_image(buffer: *mut u8, width: i32, height: i32) {
+pub unsafe extern "C" fn generate_image(buffer: *mut u8, width: i32, height: i32) {
     let data = std::slice::from_raw_parts_mut(buffer, (width * height * 4) as usize);
     let mut offs = 0;
     for y in 0..height {

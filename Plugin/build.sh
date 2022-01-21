@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 LIB="mandelbrot"
 OPT="--release"
 DST="../Assets"
@@ -70,6 +72,8 @@ elif [ $UNAME = Darwin ]; then
       target/${TARGET_ARM}/release/lib${LIB}.dylib \
       target/${TARGET_X86}/release/lib${LIB}.dylib
 
-    cp ${LIB}.bundle ${DST}/macOS
+    DST_FILE="${DST}/macOS/${LIB}.bundle"
+    [ -e $DST_FILE ] && rm $DST_FILE
+    cp ${LIB}.bundle $DST_FILE
 
 fi

@@ -2,10 +2,11 @@
 name = "unity-plugin-test"
 version = "1.0.0"
 authors = ["Keijiro Takahashi <keijiro@gmail.com>"]
+edition = "2021"
 
 [lib]
 name = "mandelbrot"
 crate-type = ["cdylib"]
 
 [dependencies]
-num = "0.1"
+num = "0.4.0"
