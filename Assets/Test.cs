@@ -4,19 +4,18 @@ using System.Runtime.InteropServices;
 public class Test : MonoBehaviour
 {
     #if !UNITY_EDITOR && (UNITY_IOS || UNITY_WEBGL)
-    [DllImport("__Internal", EntryPoint="generate_image")]
+    [DllImport("__Internal")]
     #else
-    [DllImport("mandelbrot", EntryPoint="generate_image")]
+    [DllImport("mandelbrot")]
     #endif
-    static extern void
-      GenerateImage([Out] Color32[] buffer, int width, int height);
+    static extern void generate_image([Out] Color32[] buffer, int width, int height);
 
     void Start ()
     {
         var startTime = Time.realtimeSinceStartup;
 
         var pixels = new Color32[1024 * 1024];
-        GenerateImage(pixels, 1024, 1024);
+        generate_image(pixels, 1024, 1024);
 
         var endTime = Time.realtimeSinceStartup;
         Debug.Log("execution time = " + (endTime - startTime));
