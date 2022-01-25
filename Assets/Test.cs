@@ -10,21 +10,26 @@ public class Test : MonoBehaviour
     #endif
     static extern void generate_image([Out] Color32[] buffer, int width, int height);
 
-    void Start ()
+    const int Size = 512;
+
+    void Start()
     {
         var startTime = Time.realtimeSinceStartup;
 
-        var pixels = new Color32[1024 * 1024];
-        generate_image(pixels, 1024, 1024);
+        var pixels = new Color32[Size * Size];
+        generate_image(pixels, Size, Size);
 
         var endTime = Time.realtimeSinceStartup;
         Debug.Log("execution time = " + (endTime - startTime));
 
-        var texture = new Texture2D(1024, 1024);
+        var texture = new Texture2D(Size, Size);
         texture.wrapMode = TextureWrapMode.Clamp;
         texture.SetPixels32(pixels);
         texture.Apply();
 
         GetComponent<Renderer>().material.mainTexture = texture;
     }
+
+    void Update()
+      => transform.localRotation = Quaternion.Euler(33.3f * Time.time, 41.7f * Time.time, 0);
 }
